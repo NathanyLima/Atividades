@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Tipo de Dado</title>
+    <script>
+        function verificarTipoDado() {
+            // Solicita ao usuário um dado via teclado
+            let dado = prompt("Digite um dado:");
+
+            // Pergunta ao usuário se deseja verificar o tipo do dado
+            let confirmar = confirm("Deseja verificar o tipo do dado informado?");
+
+            // Função para determinar o tipo real do dado
+            function obterTipoReal(dado) {
+                if (dado === null) return "null"; // Caso o usuário cancele o prompt
+
+                // Substitui vírgulas por pontos para tratar números decimais corretamente
+                let dadoFormatado = dado.replace(',', '.');
+
+                // Tenta converter a entrada para um número
+                let numeroConvertido = Number(dadoFormatado);
+                if (!isNaN(numeroConvertido) && dadoFormatado.trim() !== "") {
+                    return Number.isInteger(numeroConvertido) ? "number (int)" : "number (float)";
+                }
+
+                // Verifica se é um booleano
+                if (dado.toLowerCase() === "true" || dado.toLowerCase() === "false") {
+                    return "boolean";
+                }
+
+                // Caso contrário, assume que é uma string
+                return "string";
+            }
+
+            // Determina a mensagem a ser exibida
+            let mensagem;
+            if (confirmar) {
+                let tipoDado = obterTipoReal(dado);
+                mensagem = `O tipo do dado informado é: ${tipoDado}`;
+            } else {
+                mensagem = "Obrigado por visitar esta página.";
+            }
+
+            // Exibe a mensagem no corpo da página
+            document.body.innerHTML = `<p>${mensagem}</p>`;
+        }
+    </script>
+</head>
+<body onload="verificarTipoDado()">
+</body>
+</html>

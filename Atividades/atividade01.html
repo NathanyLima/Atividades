@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Atual</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>DATA ATUAL</h1>
+    <p id="data"></p>
+
+    <script>
+        function obterNomeDoDiaSemana(diaSemana){
+            const diasDaSemana = [
+                'Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira',
+                'Quinta-feira', 'Sexta-feira', 'Sábado'
+            ];
+            return diasDaSemana[diaSemana];
+        }
+
+        function obterNomeDoMes(mes){
+            const meses = [
+                'janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho',
+                'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'
+            ];
+            return meses[mes];
+        }
+
+        function obterDataFormatada(){
+            const hoje = new Date();
+            
+            const diaSemana = hoje.getDay();
+            const diaDoMes = hoje.getDate();
+            const mes = hoje.getMonth();
+            const ano = hoje.getFullYear();
+            
+            const nomeDoDiaSemana = obterNomeDoDiaSemana(diaSemana);
+            const nomeDoMes = obterNomeDoMes(mes);
+            
+            return `${nomeDoDiaSemana}, ${diaDoMes} de ${nomeDoMes} de ${ano}`;
+        }
+
+        document.getElementById('data').textContent = obterDataFormatada();
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar e Exibir Valores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Aprendendo Adicionar Valores ao Array</h1>
+    <form id="form">
+        <label for="item">Digite uma palavra:</label>
+        <input type="text" id="item" required>
+        <button type="submit">Adicionar</button>
+    </form>
+    
+    <h2>Lista Ordenada</h2>
+    <ol id="lista"></ol>
+
+    <script>
+        const valores = [];
+
+        const form = document.getElementById('form');
+        const input = document.getElementById('item');
+        const lista = document.getElementById('lista');
+
+        form.addEventListener('submit', function(event){
+            event.preventDefault(); 
+
+            const valor = input.value.trim();
+            input.value = '';
+
+            if (valor) {
+                valores.push(valor);
+                valores.sort();
+                atualizarLista();
+            }
+        });
+
+        function atualizarLista(){
+            lista.innerHTML = '';
+
+            valores.forEach(valor =>{
+                const item = document.createElement('li');
+                item.textContent = valor;
+                lista.appendChild(item);
+            });
+        }
+    </script>
+</body>
+</html>

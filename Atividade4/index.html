@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Formulário de Cadastro</title>
     <style>
-      body {
+        
+      body{
         font-family: Helvetica, sans-serif;
         display: flex;
         justify-content: center;
@@ -15,7 +16,7 @@
         margin: 0;
       }
 
-      .container {
+      .container{
         width: 600px;
         padding: 20px;
         background-color: white;
@@ -23,25 +24,25 @@
         border-radius: 5px;
       }
 
-      h1 {
+      h1{
         font-size: 26px;
         color: #000;
         text-align: left;
         margin-bottom: 20px;
       }
 
-      form {
+      form{
         display: flex;
         flex-direction: column;
       }
 
-      label {
+      label{
         font-size: 10px;
         color: rgba(34, 34, 34, 0.9);
         margin-bottom: 5px;
       }
 
-      .input-line {
+      .input-line{
       border: none;
       border-bottom: 2px solid #ccc; 
       width: 100%; 
@@ -52,7 +53,7 @@
       box-sizing: border-box;
       }
 
-      .row {
+      .row{
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -64,51 +65,51 @@
         margin-right: 3%; 
       }
 
-      .row .input-group-data {
+      .row .input-group-data{
         flex-basis: 30%; 
       }
 
-      .input-group-radio {
+      .input-group-radio{
         flex-basis: 60%;
       }
 
-      .radio-group {
+      .radio-group{
         display: flex;
         flex-direction: column;
         gap: 5px;
       }
 
-      .radio-group label {
+      .radio-group label{
         font-size: 12px;
         margin-right: 10px;
         color: rgba(34, 34, 34, 0.9);
       }
 
-      .radio-group input {
+      .radio-group input{
         margin-right: 5px;
       }
 
-      .radio-group input[type="radio"]:checked + label {
+      .radio-group input[type="radio"]:checked + label{
         color: black;
       }
 
       .radio-group input[type="radio"]:checked {
         accent-color: black; 
       }
-
-      .error {
+        
+      .error{
         color: red;
         font-size: 10px;
         display: none; 
       }
 
-      .button-group {
+      .button-group{
         display: flex;
         justify-content: center;
         gap: 20px;
       }
 
-      button {
+      button{
         font-size: 12px;
         background-color: #eee;
         border: 1px solid #aaa;
@@ -117,11 +118,11 @@
         cursor: pointer;
       }
 
-      button:hover {
+      button:hover{
         background-color: #ddd;
       }
 
-      input[type="date"] {
+      input[type="date"]{
         padding: 6px 10px;
         border: 1px solid #ccc;
         border-radius: 4px;
@@ -129,6 +130,8 @@
       }
     </style>
 </head>
+
+    
 <body>
     <div class="container">
         <h1>Formulário de Cadastro:</h1>
@@ -145,7 +148,6 @@
             />
             <span class="error" id="nomeError">Nome inválido</span>
 
-            
             <div class="row">
                 <div class="input-group">
                     <label for="email">Email:</label>
@@ -170,7 +172,6 @@
                 </div>
             </div>
 
-            
             <div class="row">
                 <div class="input-group">
                     <label for="telefoneFixo">Telefone Fixo:</label>
@@ -205,6 +206,7 @@
                                 name="tipo"
                                 value="Professor"
                             />
+                            
                             Professor
                         </label>
                         <label for="aluno">
@@ -214,7 +216,6 @@
                     </div>
                 </div>
             </div>
-
            
             <div class="row">
                 <div class="input-group" style="display: none" id="cursoGroup">
